@@ -1,12 +1,21 @@
 <div>
-  <input [(ngModel)]="myHero.name" placeholder="Name"/>
-  <input [(ngModel)]="myHero.power" placeholder="Power"/>
-  <input [(ngModel)]="myHero.secret_ident" placeholder="Secret Ident"/>
-  <input [(ngModel)]="myHero.nemesis" placeholder="Nemesis"/>
-  <button (click)="onSubmit()">Submit</button>
+  <h2>Post Form</h2>
+  <input [(ngModel)]="newHero.name" placeholder="Name"/>
+  <input [(ngModel)]="newHero.power" placeholder="Power"/>
+  <input [(ngModel)]="newHero.secret_ident" placeholder="Secret Ident"/>
+  <input [(ngModel)]="newHero.nemesis" placeholder="Nemesis"/>
+  <button (click)="postHero()">Submit</button>
+  <h2>Patch Form</h2>
+  <input [(ngModel)]="currentHero.name" placeholder="Name"/>
+  <input [(ngModel)]="currentHero.power" placeholder="Power"/>
+  <input [(ngModel)]="currentHero.secret_ident" placeholder="Secret Ident"/>
+  <input [(ngModel)]="currentHero.nemesis" placeholder="Nemesis"/>
+  <button (click)="patchHero()">Submit</button>
   <ul>
     <li *ngFor="let hero of heroes">
       {{hero.id}} {{hero.name}} {{hero.power}} {{hero.secret_ident}} {{hero.nemesis}}
+      <button (click)="editHero(hero)">Edit</button>
+      <button (click)="destroyHero(hero)">Delete</button>
     </li>
   </ul>
 </div>
